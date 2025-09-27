@@ -1,11 +1,11 @@
 <h1 align="center">Hi 👋, I'm Karthik Sharma</h1>
-<h3 align="center">A passionate Student from India</h3>
+<h3 align="center">SQL | PYTHON:PANDAS | POWER BI| TABLEAU | ADVANCE EXCEL</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=anlyisiswithkarthik&label=Profile%20views&color=0e75b6&style=flat" alt="anlyisiswithkarthik" /> </p>
 
 - 🌱 I’m currently learning **PowerBI**
 
-- 💬 Ask me about **Anlysis and Finance**
+- 💬 Ask me about **Analysis and Finance**
 
 - 📫 How to reach me **9a.karthiksharma1234@gmail.com**
 
