@@ -2,6 +2,8 @@
 
 ### A "Make in India" Initiative — Renewable Energy Sector
 
+> 📥 **Download this document:** [**Word Document (.docx)**](SuryaTech_Solar_Business_Plan.docx) — Click the link, then click the **Download** button to save the file.
+
 ---
 
 ## Table of Contents
