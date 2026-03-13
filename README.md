@@ -34,6 +34,7 @@ I'm a data-focused problem solver with strong hands-on experience in **SQL, Pyth
 - **Customer Cohort Analysis (SQL + Pandas)** — retention cohorts, LTV approximation, churn signals  
 - **Inventory Optimization (SQL)** — reorder triggers, ABC analysis, reporting automation  
 - **ETL Scripts (Python)** — ingestion, cleaning, validation, ready for BI consumption
+- **[Make in India Business Plan — SuryaTech Solar Solutions](Make_in_India_Business_Plan.md)** — comprehensive business plan for a solar energy manufacturing company under the Make in India Renewable Energy sector
 
 *(Pin the above repos to your profile for maximum recruiter visibility.)*
 
