@@ -319,8 +319,12 @@ def analyze_budget_opportunity(df):
     plt.close()
     print(f"\n  ✅ Chart saved: output/budget_impact_comparison.png")
 
+    budget_savings = has_budget["Savings_Rate"].mean()
+    no_budget_savings = no_budget["Savings_Rate"].mean()
+    return budget_savings, no_budget_savings
 
-def feature_prioritization(df):
+
+def feature_prioritization(df, budget_savings, no_budget_savings):
     """Data-driven feature prioritization based on user needs."""
     print_section("DATA-DRIVEN FEATURE PRIORITIZATION")
 
@@ -355,10 +359,7 @@ def feature_prioritization(df):
     print(f"     • {len(high_anxiety)/len(df)*100:.0f}% high-anxiety users validate need for proactive alerts")
     print(f"     • Avg food spend of {df['Food_Pct'].mean():.0f}% confirms food as #1 target category")
     print(f"     • {len(no_budget)/len(df)*100:.0f}% without budget tools = massive adoption opportunity")
-    print(f"     • Budget tool users save {has_budget_savings:.0f}% vs {no_budget_savings:.0f}% — clear impact")
-
-    has_budget_data = df[df["Uses_Budget_App"] == 1]
-    no_budget_data = df[df["Uses_Budget_App"] == 0]
+    print(f"     • Budget tool users save {budget_savings:.0f}% vs {no_budget_savings:.0f}% — clear impact")
 
     return high_anxiety, low_savings
 
@@ -414,14 +415,8 @@ def main():
     df = segment_users(df)
     analyze_spending_patterns(df)
     analyze_anxiety_correlation(df)
-    analyze_budget_opportunity(df)
-
-    # Fix: Calculate these before feature_prioritization uses them
-    global has_budget_savings, no_budget_savings
-    has_budget_savings = df[df["Uses_Budget_App"] == 1]["Savings_Rate"].mean()
-    no_budget_savings = df[df["Uses_Budget_App"] == 0]["Savings_Rate"].mean()
-
-    feature_prioritization(df)
+    budget_savings, no_budget_savings = analyze_budget_opportunity(df)
+    feature_prioritization(df, budget_savings, no_budget_savings)
     generate_summary(df)
 
     print(f"\n{'='*60}")
