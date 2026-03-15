@@ -30,6 +30,7 @@ I'm a data-focused problem solver with strong hands-on experience in **SQL, Pyth
 ---
 
 ## 📁 Projects (examples to pin)
+- **🍕 [slice Smart Budgets — PM Internship Case Study](slice-pm-internship-project/)** — Full product management case study for slice's PM Internship: market research, user personas, competitive analysis, product roadmap, feature specs, metrics framework, go-to-market strategy, and Python-based data analysis of UPI trends & user segmentation  
 - **Sales Performance Dashboard (Power BI)** — drilldowns, dynamic measures, performance forecasting  
 - **Customer Cohort Analysis (SQL + Pandas)** — retention cohorts, LTV approximation, churn signals  
 - **Inventory Optimization (SQL)** — reorder triggers, ABC analysis, reporting automation  
