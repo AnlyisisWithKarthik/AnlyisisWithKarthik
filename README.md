@@ -59,3 +59,36 @@ Check my pinned projects — open to collaborations, internships, and data chall
 
 ---
 *Keywords: SQL, Python, Pandas, Power BI, Tableau, Advanced Excel, Data Analysis, Data Visualization, ETL, BI, Dashboard*
+
+## 🤖 NASDAQ India Investor Cost Bot
+
+This repository now includes a CLI bot at `./nasdaq_tax_bot.py` that helps estimate:
+- convenience fees
+- compliance fees
+- tax impact (including LRS TCS and investment tax estimates)
+
+It also supports live internet-backed data:
+- USD/INR conversion rate
+- live US ticker quote
+- listing US market companies (SEC dataset)
+
+### Run examples
+
+```bash
+# From repository root
+
+# Live USD/INR
+python nasdaq_tax_bot.py fx
+
+# Live quote
+python nasdaq_tax_bot.py quote --ticker AAPL
+
+# List companies
+python nasdaq_tax_bot.py companies --limit 20
+
+# Calculate cost impact
+python nasdaq_tax_bot.py calculate --amount-inr 100000 --platform vested --ticker AAPL
+
+# If live FX API is unavailable in your environment
+python nasdaq_tax_bot.py calculate --amount-inr 100000 --platform vested --usd-inr-rate 83.0
+```
