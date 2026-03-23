@@ -6,6 +6,7 @@ from nasdaq_tax_bot import (
     _calculate_tcs,
     calculate_investment_breakdown,
     list_us_market_companies,
+    main,
 )
 
 
@@ -50,6 +51,11 @@ class NasdaqTaxBotTests(unittest.TestCase):
         self.assertEqual(len(companies), 2)
         self.assertEqual(companies[0]["ticker"], "AAPL")
         self.assertEqual(companies[1]["ticker"], "GOOGL")
+
+    @patch("sys.argv", ["nasdaq_tax_bot.py", "calculate", "--amount-inr", "100000", "--platform", "vested", "--usd-inr-rate", "83"])
+    def test_cli_calculate_with_manual_fx_succeeds(self):
+        exit_code = main()
+        self.assertEqual(exit_code, 0)
 
 
 if __name__ == "__main__":

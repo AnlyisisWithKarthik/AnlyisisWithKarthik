@@ -51,7 +51,12 @@ def _fetch_json(url: str, timeout: int = 10) -> Dict[str, Any]:
 
 
 def get_usd_inr_rate() -> float:
-    data = _fetch_json("https://open.er-api.com/v6/latest/USD")
+    try:
+        data = _fetch_json("https://open.er-api.com/v6/latest/USD")
+    except URLError as err:
+        raise ValueError(
+            "Unable to fetch live USD/INR rate. Check internet connectivity or pass --usd-inr-rate."
+        ) from err
     rates = data.get("rates", {})
     rate = rates.get("INR")
     if not rate:
@@ -192,6 +197,7 @@ def main() -> int:
     calc_parser.add_argument("--holding-period-years", type=float, default=1.0)
     calc_parser.add_argument("--indian-income-tax-rate", type=float, default=0.30)
     calc_parser.add_argument("--remittance-so-far-inr", type=float, default=0.0)
+    calc_parser.add_argument("--usd-inr-rate", type=float, default=None, help="Optional USD/INR override when live API is unavailable")
     calc_parser.add_argument("--ticker", default=None, help="Optional ticker to include live price context")
     calc_parser.set_defaults(command="calculate")
 
@@ -214,7 +220,8 @@ def main() -> int:
                     holding_period_years=args.holding_period_years,
                     indian_income_tax_rate=args.indian_income_tax_rate,
                     remittance_so_far_inr=args.remittance_so_far_inr,
-                )
+                ),
+                usd_inr_rate=args.usd_inr_rate,
             )
             if args.ticker:
                 payload["live_quote"] = get_live_quote_usd(args.ticker)
