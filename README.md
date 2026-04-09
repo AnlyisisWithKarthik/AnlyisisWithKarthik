@@ -39,6 +39,11 @@ I'm a data-focused problem solver with strong hands-on experience in **SQL, Pyth
 
 ---
 
+## 📝 Internship Reports
+- [Week 1 — Taj Hotels Group (Finance Orientation & SAP S/4HANA Fiori BRS)](internship-report-week-1.md)
+
+---
+
 ## 🎯 Highlights
 - Strong practical focus — projects built for business impact, not just notebooks  
 - Clean, well-documented code and reproducible notebooks  
